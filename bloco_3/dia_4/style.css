@@ -19,3 +19,7 @@ h2, h3 {
     display: inline-block;
     margin-right: 45px;
 }
+
+.top-line {
+    border-top: solid 1px #CBDFBD;
+}
