@@ -6,3 +6,11 @@ body {
     padding: 20px;
     background-color: #F6F4D2;
 }
+
+h1 {
+    color: #A44A3F
+}
+
+h2, h3 {
+    color: #F19C79;
+}
