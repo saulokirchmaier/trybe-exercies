@@ -14,3 +14,8 @@ h1 {
 h2, h3 {
     color: #F19C79;
 }
+
+.nav-links {
+    display: inline-block;
+    margin-right: 45px;
+}
