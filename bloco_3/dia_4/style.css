@@ -4,7 +4,8 @@ body {
     max-width: 1070px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #F6F4D2;
+    background-color: rbga(246, 244, 210, 0.7);
+    color: rgba(0, 0, 0, 0.9)
 }
 
 h1 {
@@ -32,3 +33,14 @@ img {
     max-width: 40%;
 }
 
+table {
+    width: 100%;
+}
+
+th {
+    background-color: #CBDFBD;
+}
+
+td {
+    background-color: #D4E09B;
+}
