@@ -1,4 +1,4 @@
-// Mostra o conteudo do obejto em um for/in
+// Boas vindas a Margarida
 
 let info = {
     personagem: "Margarida",
@@ -8,6 +8,6 @@ let info = {
 
 info.recorrente = 'Sim';
 
-for (let key in info) {
+for (key in info) {
   console.log(info[key]);
 }
