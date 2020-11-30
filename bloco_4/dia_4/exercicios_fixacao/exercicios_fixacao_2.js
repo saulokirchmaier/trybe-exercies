@@ -134,6 +134,62 @@ function profitCalculator(valorCusto, valorVenda, unidadesVendidas) {
     return lucroTotal;
 }
 
+function calculationINSS(salarioBruto) {
+    if (salarioBruto <= 1556.94) {
+        aliquotaINSS = 0.08;
+        valorAliquota = salarioBruto * aliquotaINSS;
+    } else if (salarioBruto > 1556.94 && salarioBruto <= 2594.92) {
+        aliquotaINSS = 0.09;
+        valorAliquota = salarioBruto * aliquotaINSS;
+    } else if (salarioBruto > 2594.92 && salarioBruto <= 5189.82) {
+        aliquotaINSS = 0.11;
+        valorAliquota = salarioBruto * aliquotaINSS;
+    } else {
+        aliquotaINSS = 0.11;
+        valorAliquota = 570.88;
+    }
+    
+    salarioDeduzidoINSS = salarioBruto -valorAliquota;
+
+    return salarioDeduzidoINSS;
+}
+
+function caculationIR(salario) {
+    let salarioDeduzidoINSS = calculationINSS(salario);
+
+    if (salarioDeduzidoINSS <= 1903.98) {
+        aliquotaIR = 0;
+        parcelaDeduzir = 0;
+        valorIR = 0;
+    } else if (salarioDeduzidoINSS > 1903.98 && salarioDeduzidoINSS <= 2826.65) {
+        aliquotaIR = 0.075;
+        parcelaDeduzir = 142.80;
+        valorIR = (salarioDeduzidoINSS * aliquotaIR) - parcelaDeduzir;
+    } else if (salarioDeduzidoINSS > 2826.65 && salarioDeduzidoINSS <= 3751.05) {
+        aliquotaIR = 0.15;
+        parcelaDeduzir = 354.80;
+        valorIR = (salarioDeduzidoINSS * aliquotaIR) - parcelaDeduzir;
+    } else if (salarioDeduzidoINSS > 3751.05 && salarioDeduzidoINSS <= 4664.68) {
+        aliquotaIR = 0.225;
+        parcelaDeduzir = 636.13;
+        valorIR = (salarioDeduzidoINSS * aliquotaIR) - parcelaDeduzir;
+    } else {
+        aliquotaIR = 0.275;
+        parcelaDeduzir = 869.36;
+        valorIR = (salarioDeduzidoINSS * aliquotaIR) - parcelaDeduzir;
+    }
+    
+    salarioLiquido = salarioDeduzidoINSS - valorIR;
+
+    return salarioLiquido;
+}
+
+function liquidySalary(salario) {
+    let salarioLiquido = caculationIR(salario);
+
+    return salarioLiquido;
+}
+
 
 
 console.log(sum(10, 20));
@@ -150,4 +206,6 @@ console.log(gradeConceitConverter(55));
 console.log(checkEvenNumbers(50, 25, 30));
 console.log(checkOddNumbers(50, 250, 30));
 console.log(profitCalculator(500, 750, 1000));
+console.log(profitCalculator(500, 750, 1000));
+console.log(liquidySalary(3000));
 
