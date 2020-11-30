@@ -81,7 +81,6 @@ function chessMove(a) {
 
         default:
             return ("No piece found");
-            break;
     }
 }
 
@@ -103,7 +102,16 @@ function gradeConceitConverter(gradePorcentage) {
     } else if (gradePorcentage < 50 && gradePorcentage >= 0) {
         gradeConceit = "F";
     } 
-    return gradeConceit
+
+    return gradeConceit;
+}
+
+function checkEvenNumbers(a, b, c) {
+    if (a % 2 == 0 || b % 2 == 0 || c % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
@@ -118,4 +126,5 @@ console.log(signalOfNumber(0));
 console.log(isTriangule(60, 30, 90));
 console.log(chessMove('queen'));
 console.log(gradeConceitConverter(55));
+console.log(checkEvenNumbers(50));
 
