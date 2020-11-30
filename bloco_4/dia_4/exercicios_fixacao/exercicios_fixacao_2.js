@@ -122,6 +122,18 @@ function checkOddNumbers(a, b, c) {
     }
 }
 
+function profitCalculator(valorCusto, valorVenda, unidadesVendidas) {
+    let impostoSobreOCusto = valorCusto * 0.2;
+
+    let valorCustoTotal = valorCusto + impostoSobreOCusto;
+
+    // Calculo do lucro
+    let lucroPorUnidade = valorVenda - valorCustoTotal;
+    let lucroTotal = lucroPorUnidade * unidadesVendidas;
+
+    return lucroTotal;
+}
+
 
 
 console.log(sum(10, 20));
@@ -137,4 +149,5 @@ console.log(chessMove('queen'));
 console.log(gradeConceitConverter(55));
 console.log(checkEvenNumbers(50, 25, 30));
 console.log(checkOddNumbers(50, 250, 30));
+console.log(profitCalculator(500, 750, 1000));
 
