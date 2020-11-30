@@ -85,7 +85,26 @@ function chessMove(a) {
     }
 }
 
+function gradeConceitConverter(gradePorcentage) {
+    let gradeConceit;
 
+    if (gradePorcentage > 100 || gradePorcentage < 0) {
+        gradeConceit = "Error, invalid number!"
+    } else if (gradePorcentage <= 100 && gradePorcentage >= 90) {
+        gradeConceit = "A";
+    } else if (gradePorcentage < 90 && gradePorcentage >= 80) {
+        gradeConceit = "B";
+    } else if (gradePorcentage < 80 && gradePorcentage >= 70) {
+        gradeConceit = "C";
+    } else if (gradePorcentage < 70 && gradePorcentage >= 60) {
+        gradeConceit = "D";
+    } else if (gradePorcentage < 60 && gradePorcentage >= 50) {
+        gradeConceit = "E";
+    } else if (gradePorcentage < 50 && gradePorcentage >= 0) {
+        gradeConceit = "F";
+    } 
+    return gradeConceit
+}
 
 
 console.log(sum(10, 20));
@@ -98,4 +117,5 @@ console.log(biggerOfthree(4, 20, 50));
 console.log(signalOfNumber(0));
 console.log(isTriangule(60, 30, 90));
 console.log(chessMove('queen'));
+console.log(gradeConceitConverter(55));
 
