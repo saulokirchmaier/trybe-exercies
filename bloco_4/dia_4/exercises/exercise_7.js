@@ -3,7 +3,6 @@
 function biggerNumberIndex(array) {
   let biggerNumber = array[0];
   let indexOfBigger = 0;
-  // console.log(biggerNumber, indexOfBigger);
 
   for (let index = 1; index < array.length; index += 1) {
     if (array[index] > biggerNumber) {
