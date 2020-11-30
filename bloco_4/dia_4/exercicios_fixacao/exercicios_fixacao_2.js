@@ -114,6 +114,15 @@ function checkEvenNumbers(a, b, c) {
     }
 }
 
+function checkOddNumbers(a, b, c) {
+    if (a % 2 != 0 || b % 2 != 0 || c % 2 != 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 
 console.log(sum(10, 20));
 console.log(sub(40, 20));
@@ -126,5 +135,6 @@ console.log(signalOfNumber(0));
 console.log(isTriangule(60, 30, 90));
 console.log(chessMove('queen'));
 console.log(gradeConceitConverter(55));
-console.log(checkEvenNumbers(50));
+console.log(checkEvenNumbers(50, 25, 30));
+console.log(checkOddNumbers(50, 250, 30));
 
