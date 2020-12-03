@@ -110,12 +110,19 @@
         // Exrecício 9 - Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
         for (index = 0; index < 3; index += 1) {
             const subtitle = document.createElement('h3');
+            subtitle.innerHTML = 'h3 aqui';
             centerContent.appendChild(subtitle);
         }
 
         // Parte II
         // Exercicio 1 - Adicione a classe title na tag h1 criada
         titleH1.className = 'title';
+
+        // Exercício 2 - Adicione a classe description nas 3 tags h3 criadas
+        const takeH3 = document.getElementsByTagName('h3');
+        for (let index = 0; index < takeH3.length; index += 1) {
+            takeH3[index].className = 'description';
+        }
 
     </script>
   </body>
