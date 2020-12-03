@@ -74,7 +74,7 @@
 
         // Exercicio 4 - Adicione a tag p como filho do div criado no passo 3 e coloque algum texto
         const addSomeText = document.createElement('p');
-        addSomeText.innerText = 'Criando um texto para o exercício 4 da aula 2 do bloco 5 - Trabalhando com elementos.';
+        addSomeText.innerText = 'Criando um texto para a aula 2 do bloco 5 - Trabalhando com elementos.';
         centerContent.appendChild(addSomeText);
 
         // Exercicio 5 - Adicione a tag div com a classe left-content como filho da tag div criada no passo 2
@@ -90,7 +90,20 @@
         // Exercicio 7 - Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5
         const image = document.createElement('img');
         image.src = 'https://picsum.photos/200';
+        image.className = 'small-image';
         leftContent.appendChild(image);
+
+        // Exercicio 8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6
+        let numbers = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+        const list1to10 = document.createElement('ul');
+        
+        for (let index = 0; index < numbers.length; index += 1) {
+            const item  = document.createElement('li');
+            item.innerText = numbers[index];
+            list1to10.appendChild(item);
+        }
+
+        rightContent.appendChild(list1to10);
 
     </script>
   </body>
