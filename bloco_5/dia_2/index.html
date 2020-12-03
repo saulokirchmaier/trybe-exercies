@@ -77,15 +77,20 @@
         addSomeText.innerText = 'Criando um texto para o exercício 4 da aula 2 do bloco 5 - Trabalhando com elementos.';
         centerContent.appendChild(addSomeText);
 
-        // Exercicio 5 - Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+        // Exercicio 5 - Adicione a tag div com a classe left-content como filho da tag div criada no passo 2
         const leftContent = document.createElement('div');
         leftContent.className = 'left-content';
         mainContent.appendChild(leftContent);
 
-        // Exercicio 6 - Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+        // Exercicio 6 - Adicione a tag div com a classe right-content como filho da tag div criada no passo 2
         const rightContent = document.createElement('div');
         rightContent.className = 'right-content';
         mainContent.appendChild(rightContent);
+
+        // Exercicio 7 - Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5
+        const image = document.createElement('img');
+        image.src = 'https://picsum.photos/200';
+        leftContent.appendChild(image);
 
     </script>
   </body>
