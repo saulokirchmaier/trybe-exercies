@@ -45,7 +45,6 @@
         - document.getElementsByClassName()
         - document.getElementsByTagName()
         
-        2. Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
         3. Crie uma função que mude a cor do quadrado vermelho para branco.
         4. Crie uma função que corrija o texto da tag <h1>.
         5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
@@ -59,8 +58,14 @@
             text[0].innerHTML = 'No fim de 2022, me vejo como um programador com um pouco de experiência e vivência de mercado. Ja pensando em cargos mais altos na empresa em que estiver. Quem sabe ja estarei morando fora ou trabalhando para uma empresa de outro país.'
         }
         
+        // 2. Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
+        function changeBackgroundColorOfMainContent() {
+            let mainContent = document.getElementsByClassName('main-content')[0].style.backgroundColor = 'rgb(76, 164, 109';
+            // mainContent[0].style.backgroundColor = 'rgb(76, 164, 109';
+        }
 
         changeTextToDescription();
+        changeBackgroundColorOfMainContent();
     </script>
   </body>
 </html>
