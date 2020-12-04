@@ -15,7 +15,7 @@ createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
 
-// Ex. 1
+// Ex. 1 - Mostrar os dias do mês
 function createDaysOfTheMonth() {
     const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
     const daysOfTheMonth = document.querySelector('#days');
@@ -28,6 +28,11 @@ function createDaysOfTheMonth() {
 
         if (dezDaysList[index] === 24 || dezDaysList[index] === 25 || dezDaysList[index] === 31) {
             day.className += ' holiday';
+        }
+
+        let fridays = (index + 2) % 7;
+        if (fridays === 0) {
+            day.className += ' fryday';
         }
     }
 }
