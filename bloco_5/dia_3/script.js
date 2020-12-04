@@ -46,6 +46,7 @@ let holidayButton;
 let stadeOfHolidays = false;
 let fridays;
 let fridayButton;
+let stadeOfFridays = false;
 
 function createHolidayButton() {
     let button = document.createElement('button');
@@ -82,9 +83,26 @@ function createFridayButton() {
     fridayButton = document.querySelector('#btn-friday');
 }
 
+// Ex. 5 - marca sextas-feiras quando click no botão Sexta-feira
+function changeFridaysColor() {
+    if (!stadeOfFridays) {
+        for (let index = 0; index < fridays.length; index += 1) {
+            fridays[index].style.backgroundColor = 'lightblue';
+        }
+    }
+    if (stadeOfFridays) {
+        for (let index = 0; index < fridays.length; index += 1) {
+            fridays[index].style.backgroundColor = 'rgb(238,238,238)';
+        }
+    }
+    stadeOfFridays = !stadeOfFridays;
+}
+
 
 
 createDaysOfTheMonth();
 createHolidayButton();
 holidayButton.addEventListener('click', changeHolidaysColor);
 createFridayButton();
+fridayButton.addEventListener('click', changeFridaysColor);
+
