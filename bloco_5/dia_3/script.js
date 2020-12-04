@@ -32,19 +32,47 @@ function createDaysOfTheMonth() {
 
         let fridays = (index + 2) % 7;
         if (fridays === 0) {
-            day.className += ' fryday';
+            day.className += ' friday';
         }
     }
+    holidays = document.querySelectorAll('.holiday');
 }
 
-createDaysOfTheMonth();
+
+// Ex. 2 - botão feriado
+let holidays;
+let holidayButton;
+let stadeOfHolidays = false;
 
 function createButton() {
     let button = document.createElement('button');
-    let buttonContainer = document.querySelector('.buttons-container');
+    let buttonsContainer = document.querySelector('.buttons-container');
     button.innerText = 'Feriados';
     button.id = 'btn-holiday';
-    buttonContainer.appendChild(button);
+    buttonsContainer.appendChild(button);
+    holidayButton = document.querySelector('#btn-holiday');
+
 }
 
+// Ex. 3 - marca feriados quando click no botão feriado
+function changeHolidaysColor() {
+    if (!stadeOfHolidays) {
+        for (let index = 0; index < holidays.length; index += 1) {
+            holidays[index].style.backgroundColor = 'lightgreen';
+        }
+    }
+    if (stadeOfHolidays) {
+        for (let index = 0; index < holidays.length; index += 1) {
+            holidays[index].style.backgroundColor = 'rgb(238,238,238)';
+        }
+    }
+    stadeOfHolidays = !stadeOfHolidays;
+}
+
+
+
+createDaysOfTheMonth();
 createButton();
+
+
+holidayButton.addEventListener('click', changeHolidaysColor);
