@@ -25,6 +25,10 @@ function createDaysOfTheMonth() {
         day.innerText = dezDaysList[index];
         daysOfTheMonth.appendChild(day);
         day.className = 'days';
+
+        if (dezDaysList[index] === 24 || dezDaysList[index] === 25 || dezDaysList[index] === 31) {
+            day.className += ' holiday';
+        }
     }
 }
 
