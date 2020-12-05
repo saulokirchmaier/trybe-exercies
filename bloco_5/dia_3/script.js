@@ -122,16 +122,27 @@ window.onload = function() {
         day.style.fontSize = '20px';
     });
 
+    let taskList;
     // Ex. 7 - Criar lista de tarefeas
     function createNewTask(task) {
         let newTask = document.createElement('span');
-        newTask.innerText = task;
-        let taskList = document.querySelector('.my-tasks');
+        taskList = document.querySelector('.my-tasks');
         
+        newTask.innerText = task;
         taskList.appendChild(newTask);
     }
 
     createNewTask('Projeto')
+
+    // Ex. 8 - Cria legenda para a tarefa
+    function addColorLegendToTask(color) {
+        let taskLegend = document.createElement('div');
+        taskLegend.className = 'task';
+        taskLegend.style.backgroundColor = color;
+        taskList.appendChild(taskLegend);
+    }
+
+    addColorLegendToTask('lightcoral');
 }
 
 
