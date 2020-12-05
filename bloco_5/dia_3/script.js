@@ -143,6 +143,25 @@ window.onload = function() {
     }
 
     addColorLegendToTask('lightcoral');
+
+    // Ex. 9 - Atribiu a clase task selected quando quicar na tarefa
+    function addClassSelectedToTask() {
+        let selectLegend = document.querySelector('.task');
+
+        selectLegend.addEventListener('click', function(event) {
+            // let hasSelected = event.target
+            if (event.target.className === 'task') {
+                event.target.className += ' selected';
+            } else {
+                event.target.className = 'task';
+            }
+        });
+
+    }
+    
+    addClassSelectedToTask();
+
+
 }
 
 
