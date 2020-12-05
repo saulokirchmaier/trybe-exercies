@@ -122,7 +122,16 @@ window.onload = function() {
         day.style.fontSize = '20px';
     });
 
+    // Ex. 7 - Criar lista de tarefeas
+    function createNewTask(task) {
+        let newTask = document.createElement('span');
+        newTask.innerText = task;
+        let taskList = document.querySelector('.my-tasks');
+        
+        taskList.appendChild(newTask);
+    }
 
+    createNewTask('Projeto')
 }
 
 
