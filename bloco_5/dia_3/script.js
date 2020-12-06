@@ -94,7 +94,7 @@ window.onload = function() {
 
     createFridayButton();
 
-    // Ex. 5 - marca sextas-feiras quando click no botão Sexta-feira
+    // Ex. 5 - Muda texto sextas-feiras quando click no botão Sexta-feira
     function changeFridaysColor(fridayArray) {
 
         fridayButton.addEventListener('click',function() {
@@ -164,13 +164,22 @@ window.onload = function() {
     
     addClassSelectedToTask();
 
-    // Ex 10 - Dia com a cor da legenda selecionada
-    days.addEventListener('click', function(event) {
-        let day = event.target;
-        // day.style.backgroundColor
-        console.log(day);
-    });
+    // Ex 10 - Dia com a cor da task selecionada
+    function markDayWithColorTask() {
+        
+        days.addEventListener('click', function(event) {
+            let selected = document.querySelector('.selected');
+            if (selected) {
+                let day = event.target;
+                day.style.color = 'lightcoral';
+            } else {
+                let day = event.target;
+                day.style.color = 'rgb(119, 119, 119)';
+            }
+        });
+    }
 
+    markDayWithColorTask();
 
 }
 
