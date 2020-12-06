@@ -127,24 +127,24 @@ window.onload = function() {
         day.style.fontSize = '20px';
     });
 
-    let taskList;
+    let myList;
     // Ex. 7 - Criar lista de tarefeas
     function createNewTask(task) {
         let newTask = document.createElement('span');
-        taskList = document.querySelector('.my-tasks');
+        myList = document.querySelector('.my-tasks');
         
         newTask.innerText = task;
-        taskList.appendChild(newTask);
+        myList.appendChild(newTask);
     }
 
     createNewTask('Projeto')
 
     // Ex. 8 - Cria legenda para a tarefa
     function addColorLegendToTask(color) {
-        let taskLegend = document.createElement('div');
-        taskLegend.className = 'task';
-        taskLegend.style.backgroundColor = color;
-        taskList.appendChild(taskLegend);
+        let taskLabel = document.createElement('div');
+        taskLabel.className = 'task';
+        taskLabel.style.backgroundColor = color;
+        myList.appendChild(taskLabel);
     }
 
     addColorLegendToTask('lightcoral');
@@ -181,6 +181,34 @@ window.onload = function() {
 
     markDayWithColorTask();
 
+    // Ex. Bonus - Adicionar compormissos
+    function addCommitments() {
+        let taskInput = document.querySelector('#task-input');
+        let buttonAdd = document.querySelector('#btn-add');
+        let taskList = document.querySelector('.task-list-container .task-list');
+
+        buttonAdd.addEventListener('click', function() {
+            let commitment = document.createElement('li');
+            commitment.innerText = taskInput.value;
+            if (!taskInput.value) {
+                alert('Favor digitar um compromisso. \nEx.: Dia 31 - Ano Novo!');
+            } else {
+                taskList.appendChild(commitment);
+                taskInput.value = '';
+            }
+        });
+
+        taskInput.addEventListener('keyup', function(event) {
+            let commitment = document.createElement('li');
+            commitment.innerText = taskInput.value;
+            if (event.keyCode === 13 && taskInput.value.length > 0) {
+                taskList.appendChild(commitment);
+                taskInput.value = '';
+            }
+        });
+    }
+    
+    addCommitments();
 }
 
 
