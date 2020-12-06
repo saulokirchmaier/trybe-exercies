@@ -93,23 +93,28 @@ window.onload = function() {
     }
 
     createFridayButton();
-    
+
     // Ex. 5 - marca sextas-feiras quando click no botão Sexta-feira
-    function changeFridaysColor() {
-        if (!stadeOfFridays) {
-            for (let index = 0; index < fridays.length; index += 1) {
-                fridays[index].style.backgroundColor = 'lightblue';
+    function changeFridaysColor(fridayArray) {
+
+        fridayButton.addEventListener('click',function() {
+            if (!stadeOfFridays) {
+                for (let index = 0; index < fridays.length; index += 1) {
+                    fridays[index].innerText = 'SEXTOU 🚀️';
+                }
             }
-        }
-        if (stadeOfFridays) {
-            for (let index = 0; index < fridays.length; index += 1) {
-                fridays[index].style.backgroundColor = 'rgb(238,238,238)';
+            if (stadeOfFridays) {
+                for (let index = 0; index < fridays.length; index += 1) {
+                    fridays[index].innerText = fridayArray[index];
+                }
             }
-        }
-        stadeOfFridays = !stadeOfFridays;
+            stadeOfFridays = !stadeOfFridays;
+        });
+
     }
     
-    fridayButton.addEventListener('click', changeFridaysColor);
+    let fridaysMounth = [4, 11, 18, 25];
+    changeFridaysColor(fridaysMounth);
 
     // Ex. 6 - Zoom ao passar o mouse nos dias
     days.addEventListener('mouseover', function(event) {
@@ -149,17 +154,22 @@ window.onload = function() {
         let selectLegend = document.querySelector('.task');
 
         selectLegend.addEventListener('click', function(event) {
-            // let hasSelected = event.target
             if (event.target.className === 'task') {
                 event.target.className += ' selected';
             } else {
                 event.target.className = 'task';
             }
         });
-
     }
     
     addClassSelectedToTask();
+
+    // Ex 10 - Dia com a cor da legenda selecionada
+    days.addEventListener('click', function(event) {
+        let day = event.target;
+        // day.style.backgroundColor
+        console.log(day);
+    });
 
 
 }
