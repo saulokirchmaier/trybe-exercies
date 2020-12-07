@@ -207,7 +207,7 @@ window.onload = function() {
             }
         });
     }
-    
+
     addCommitments();
 }
 
