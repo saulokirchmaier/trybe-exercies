@@ -11,17 +11,16 @@ window.onload = function() {
     }
 
     function changeMainContentTextSize(newTextSize) {
-        let newSize = newTextSize.toString(newTextSize) + 'px';
+        let newSize = newTextSize.toString() + 'px';
         let mainContent = document.querySelector('#main-content');
         mainContent.style.fontSize = newSize;
     }
 
     function changeMainContentLineHeight(newLineHeight) {
+        let newHeight = newLineHeight.toString() +'px';
         let mainContent = document.querySelector('#main-content');
         mainContent.style.lineHeight = newLineHeight;
     }
-
-    changeMainContentLineHeight('25px');
     
     function changeMainContentFontFamily(newFontFamily) {
         let mainContent = document.querySelector('#main-content');
@@ -41,6 +40,7 @@ window.onload = function() {
             changeMainContentBackgroundColor(backgroundColorInput.value);
             changeMainContentTextColor(textColorInput.value);
             changeMainContentTextSize(fontSizeInput.value);
+            changeMainContentLineHeight(lineHeightInput.value);
 
         })
     }
