@@ -1,11 +1,14 @@
 window.onload = function() {
+    let backgroundColor;
+    let textColor;
+    let fontSize;
+    let lineHeight;
+    let fontFamily;
     
     function changeMainContentBackgroundColor(newColorBackground) {
         let mainContent = document.querySelector('#main-content');
         mainContent.style.backgroundColor = newColorBackground;
     }
-
-    changeMainContentBackgroundColor('lightgreen');
 
     function changeMainContentTextColor(newTextColor) {
         let mainContent = document.querySelector('#main-content');
@@ -34,5 +37,21 @@ window.onload = function() {
     }
 
     changeMainContentFontFamily('Roboto Mono');
+
+    function changeStyle() {
+        let buttonChangeStyle = document.querySelector('#button-change-style');
+        let backgroundColorInput = document.querySelector('#background-color-input');
+        let textColorInput = document.querySelector('#text-color-input');
+        let fontSizeInput = document.querySelector('#font-size-input');
+        let lineHeightInput = document.querySelector('#line-height-input');
+
+        buttonChangeStyle.addEventListener('click', function() {
+            backgroundColor = backgroundColorInput.value;
+            changeMainContentBackgroundColor(backgroundColor);
+        })
+    }
+
+
+    changeStyle();
 
 }
