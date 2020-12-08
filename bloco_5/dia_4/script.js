@@ -20,5 +20,12 @@ window.onload = function() {
     }
 
     changeMainContentTextSize('20px');
+
+    function changeMainContentLineHeight(newLineHeight) {
+        let mainContent = document.querySelector('#main-content');
+        mainContent.style.lineHeight = newLineHeight;
+    }
+
+    changeMainContentLineHeight('25px')
     
 }
