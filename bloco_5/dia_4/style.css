@@ -27,18 +27,26 @@ header {
     margin: 0 auto;
 }
 
-.select-style {
-    text-align: left;
-    margin: 4px;
-}
-
 .style-components div {
     display: inline-block;
     padding-right: 30px;
 }
 
+.select-style {
+    text-align: left;
+    margin: 4px;
+}
+
 .text-input {
     width: 80px;
+}
+
+#font-type {
+    width: 100px;
+}
+
+.text-font-family {
+    width: 100px;
 }
 
 #main-content {

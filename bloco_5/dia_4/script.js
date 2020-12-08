@@ -41,6 +41,7 @@ window.onload = function() {
         let textColorInput = document.querySelector('#text-color-input');
         let fontSizeInput = document.querySelector('#font-size-input');
         let lineHeightInput = document.querySelector('#line-height-input');
+        let fontFamilyInput = document.querySelector('#font-type');
 
         buttonChangeStyle.addEventListener('click', function() {
             changeMainContentBackgroundColor(backgroundColorInput.value);
@@ -48,6 +49,7 @@ window.onload = function() {
             changeMainContentTextSize(fontSizeInput.value);
             changeMainContentLineHeight(lineHeightInput.value);
             changeMainContentFontFamily(fonts.robotoMono);
+            changeMainContentFontFamily(fontFamilyInput.value);
         })
     }
 
