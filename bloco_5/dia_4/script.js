@@ -26,6 +26,13 @@ window.onload = function() {
         mainContent.style.lineHeight = newLineHeight;
     }
 
-    changeMainContentLineHeight('25px')
+    changeMainContentLineHeight('25px');
     
+    function changeMainContentFontFamily(newFontFamily) {
+        let mainContent = document.querySelector('#main-content');
+        mainContent.style.fontFamily = newFontFamily;
+    }
+
+    changeMainContentFontFamily('Roboto Mono');
+
 }
