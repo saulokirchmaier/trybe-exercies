@@ -10,14 +10,28 @@
 </head>
 <body>
     <header>
+        <h1>E-reader</h1>
+        <h2>Escolha como você gosta de ler.</h2>
         <section class="style-components">
-            <h1>E-reader</h1>
-            <h2>Escolha como você gosta de ler.</h2>
-            <div class="backgroud-color">Cor de fundo</div>
-            <div class="text-color">Cor do texto</div>
-            <div class="text-font-size">Tamanho da fonte</div>
-            <div class="text-space">Espaçamento da linha</div>
-            <div class="text-font-family">Fonte</div>
+            <div class="backgroud-color select-style">
+                <span>Cor de fundo</span>
+                <input type="color" name="" id="background-color-input">
+            </div>
+            <div class="text-color select-style">
+                <span>Cor do texto</span>
+                <input type="color" name="" id="text-color-input">
+            </div>
+            <div class="text-font-size select-style">
+                <span>Tamanho da fonte</span>
+                <input maxlength="5" placeholder="Ex.: 15" type="text" name="" id="font-size-input" class="text-input">
+            </div>
+            <div class="text-space select-style">
+                <span>Espaçamento da linha</span>
+                <input maxlength="5" placeholder="Ex.: 15" type="text" name="" id="line-height-input" class="text-input">
+            </div>
+            <div class="text-font-family select-style">
+                <span>Fonte</span>
+            </div>
         </section>
     </header>
     <main id="main-content">
