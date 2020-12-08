@@ -1,10 +1,16 @@
 window.onload = function() {
     
     function changeMainContentBackgroundColor(newColorBackground) {
-        let mainContentBackground = document.querySelector('#main-content');
-        mainContentBackground.style.backgroundColor = newColorBackground;
+        let mainContent = document.querySelector('#main-content');
+        mainContent.style.backgroundColor = newColorBackground;
     }
 
-    changeMainContentBackgroundColor('red');
+    changeMainContentBackgroundColor();
 
+    function changeMainContentTextColor(newTextColor) {
+        let mainContent = document.querySelector('#main-content');
+        mainContent.style.color = newTextColor;
+    }
+
+    changeMainContentTextColor();
 }
