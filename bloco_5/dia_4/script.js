@@ -5,12 +5,20 @@ window.onload = function() {
         mainContent.style.backgroundColor = newColorBackground;
     }
 
-    changeMainContentBackgroundColor();
+    changeMainContentBackgroundColor('lightgreen');
 
     function changeMainContentTextColor(newTextColor) {
         let mainContent = document.querySelector('#main-content');
         mainContent.style.color = newTextColor;
     }
 
-    changeMainContentTextColor();
+    changeMainContentTextColor('green');
+
+    function changeMainContentTextSize(newTextSize) {
+        let mainContent = document.querySelector('#main-content');
+        mainContent.style.fontSize = newTextSize;
+    }
+
+    changeMainContentTextSize('20px');
+    
 }
