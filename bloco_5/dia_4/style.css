@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-size: 16px;
+    text-align: justify;
+}
+
+h1, h2 {
+    padding: 10px;
+}
+
+header {
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+.style-components {
+    padding: 5px 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.style-components div {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+#main-content {
+    border: solid 1px rgba(0, 0, 0, 0.7);
+    width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e9ebed;
+}
