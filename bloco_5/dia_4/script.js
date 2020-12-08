@@ -1,9 +1,4 @@
 window.onload = function() {
-    let backgroundColor;
-    let textColor;
-    let fontSize;
-    let lineHeight;
-    let fontFamily;
     
     function changeMainContentBackgroundColor(newColorBackground) {
         let mainContent = document.querySelector('#main-content');
@@ -15,14 +10,11 @@ window.onload = function() {
         mainContent.style.color = newTextColor;
     }
 
-    changeMainContentTextColor('green');
-
     function changeMainContentTextSize(newTextSize) {
+        let newSize = newTextSize.toString(newTextSize) + 'px';
         let mainContent = document.querySelector('#main-content');
-        mainContent.style.fontSize = newTextSize;
+        mainContent.style.fontSize = newSize;
     }
-
-    changeMainContentTextSize('20px');
 
     function changeMainContentLineHeight(newLineHeight) {
         let mainContent = document.querySelector('#main-content');
@@ -46,8 +38,10 @@ window.onload = function() {
         let lineHeightInput = document.querySelector('#line-height-input');
 
         buttonChangeStyle.addEventListener('click', function() {
-            backgroundColor = backgroundColorInput.value;
-            changeMainContentBackgroundColor(backgroundColor);
+            changeMainContentBackgroundColor(backgroundColorInput.value);
+            changeMainContentTextColor(textColorInput.value);
+            changeMainContentTextSize(fontSizeInput.value);
+
         })
     }
 
