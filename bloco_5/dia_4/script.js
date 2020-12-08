@@ -1,5 +1,13 @@
 window.onload = function() {
-    
+    let fonts = {
+        castoro: 'Castoro',
+        jetBrainsMono: 'JetBrains Mono',
+        lato: 'Lato',
+        montserrat: 'Montserrat',
+        openSans: 'Open Sans',
+        robotoMono: 'Roboto Mono',
+    };
+
     function changeMainContentBackgroundColor(newColorBackground) {
         let mainContent = document.querySelector('#main-content');
         mainContent.style.backgroundColor = newColorBackground;
@@ -27,8 +35,6 @@ window.onload = function() {
         mainContent.style.fontFamily = newFontFamily;
     }
 
-    changeMainContentFontFamily('Roboto Mono');
-
     function changeStyle() {
         let buttonChangeStyle = document.querySelector('#button-change-style');
         let backgroundColorInput = document.querySelector('#background-color-input');
@@ -41,7 +47,7 @@ window.onload = function() {
             changeMainContentTextColor(textColorInput.value);
             changeMainContentTextSize(fontSizeInput.value);
             changeMainContentLineHeight(lineHeightInput.value);
-
+            changeMainContentFontFamily(fonts.robotoMono);
         })
     }
 
