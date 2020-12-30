@@ -8,26 +8,33 @@ window.onload = function() {
         robotoMono: 'Roboto Mono',
     };
 
+    function saveToLocalStorage(key, value) {
+        localStorage.setItem(key, value);
+    };
+
     function changeMainContentBackgroundColor(newColorBackground) {
         let mainContent = document.querySelector('#main-text');
         mainContent.style.backgroundColor = newColorBackground;
+        saveToLocalStorage('backgroudColor', newColorBackground);
     }
 
     function changeMainContentTextColor(newTextColor) {
         let mainContent = document.querySelector('#main-text');
         mainContent.style.color = newTextColor;
+        saveToLocalStorage('textColor', newTextColor);
     }
 
     function changeMainContentTextSize(newTextSize) {
         let newSize = newTextSize.toString() + 'px';
         let mainContent = document.querySelector('#main-text');
         mainContent.style.fontSize = newSize;
+        saveToLocalStorage('textSize', newTextSize);
     }
 
     function changeMainContentLineHeight(newLineHeight) {
-        let newHeight = newLineHeight.toString() +'px';
         let mainContent = document.querySelector('#main-text');
         mainContent.style.lineHeight = newLineHeight;
+        saveToLocalStorage('lineHeight', newLineHeight);
     }
     
     function changeMainContentFontFamily(newFontFamily) {
@@ -35,6 +42,21 @@ window.onload = function() {
         mainContent.style.fontFamily = newFontFamily;
         selectedFontFamily = document.querySelector('#selected-font-falimy');
         selectedFontFamily.innerText = newFontFamily;
+        saveToLocalStorage('fontFamily', newFontFamily);
+    }
+
+    function getSavedStyle() {
+        const backgroudColor = localStorage.getItem('backgroudColor');
+        const textColor = localStorage.getItem('textColor');
+        const textSize = localStorage.getItem('textSize');
+        const lineHeight = localStorage.getItem('lineHeight');
+        const fontFamily = localStorage.getItem('fontFamily');
+
+        changeMainContentBackgroundColor(backgroudColor);
+        changeMainContentTextColor(textColor);
+        changeMainContentFontFamily(fontFamily);
+        changeMainContentTextSize(textSize);
+        changeMainContentLineHeight(lineHeight);
     }
 
     let backgroundColorInput;
@@ -64,18 +86,5 @@ window.onload = function() {
     }
 
     changeStyle();
-
-    function showSelectedStyle() {
-        let selectedStyle = document.querySelector('.selected-style');
-
-        backgroundColorInput = document.querySelector('#background-color-input');
-        textColorInput = document.querySelector('#text-color-input');
-        fontSizeInput = document.querySelector('#font-size-input');
-        lineHeightInput = document.querySelector('#line-height-input');
-        fontFamilyInput = document.querySelector('#font-type');
-
-
-        
-    }
-
+    getSavedStyle();
 }
