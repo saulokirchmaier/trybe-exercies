@@ -125,7 +125,6 @@
         }
 
         // Exercício 3 - Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild()
-        const removeLeftContent = document.querySelector('.left-content')
         mainContent.removeChild(leftContent);
 
         // Exercício 4 - Centralize o div criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto do div
@@ -134,7 +133,13 @@
         // Exercício 5 - Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content ) para a cor verde
         centerContent.style.backgroundColor = 'green';
 
+        // Exercício 6 - Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8
+        const liItens = document.getElementsByTagName('li');
+        const listToRemove = document.querySelectorAll('ul')[0];
 
+        // for (let index = liItens.length - 1; index >= liItens.length - 2; index -= 1) {
+        //     listToRemove.removeChild(liItens[index]);
+        // }
 
     </script>
   </body>
