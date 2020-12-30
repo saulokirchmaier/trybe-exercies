@@ -199,6 +199,8 @@ window.onload = function() {
         });
 
         taskInput.addEventListener('keyup', function(event) {
+    console.log('passou');
+
             let commitment = document.createElement('li');
             commitment.innerText = taskInput.value;
             if (event.keyCode === 13 && taskInput.value.length > 0) {
