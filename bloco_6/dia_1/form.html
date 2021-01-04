@@ -12,7 +12,8 @@
   </header>
   <form action="" method="get">
     
-    <fieldset>
+    <label for="personal-data">Dados Pessoais</label>
+    <fieldset id="personal-data">
       <label for="name">Nome:</label>
       <input type="text" id="name" maxlength="40" required>
 
@@ -35,9 +36,24 @@
         <option value="go">Goiás</option>
       </select>
 
-      <label for="home-type"></label>
-      <input type="radio" name="home-type" id="">Casa
-      <input type="radio" name="home-type" id="">Apartamento
+      <label for="home-type">Moradia:</label>
+      <input type="radio" name="home-type" id="" required>Casa
+      <input type="radio" name="home-type" id="" required>Apartamento
+
+    </fieldset>
+
+    <label for="last-job">Último emprego</label>
+    <fieldset id="last-job">
+
+      <label for="resume">Resumo do currículo:</label>
+      <textarea name="resume" id="resume" cols="30" rows="5" maxlength="1000"></textarea>
+
+      <label for="role">Cargo</label>
+      <input type="text" name="role" id="role" maxlength="40">
+
+      <label for="role-description">Descrição do cargo</label>
+      <input type="text" name="role-description" id="role-description">
+
     </fieldset>
 
   </form>
