@@ -13,7 +13,7 @@
   <header>
     <h1>Cadastro de currículo</h1>
   </header>
-  <form action="" method="get">
+  <form action="" method="get" class="m-5">
     
     <fieldset id="personal-data">
       <legend>Dados Pessoais</legend>
@@ -38,13 +38,17 @@
         <label for="adress">Endereço:</label>
       </div>
 
-      <label for="city">Cidade:</label>
-      <input type="text" id="city" maxlength="40" required>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="city" placeholder="Goiania" maxlength="40" required>
+        <label for="city">Cidade:</label>
+      </div>
 
-      <label for="states">Estado:</label>
-      <select name="states" id="states" required>
-        <option value=""></option>
-      </select>
+      <div class="form-floating mb-3">
+        <select name="states" class="form-select" id="states" required>
+          <option selected>Selecione um estado</option>
+        </select>
+        <label for="states">Estado:</label>
+      </div>
 
       <label for="home-type">Moradia:</label>
       <label for="house">
