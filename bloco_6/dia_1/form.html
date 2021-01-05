@@ -37,7 +37,7 @@
       </select>
 
       <label for="home-type">Moradia:</label>
-      <input type="radio" name="home-type" id="" required>Casa
+      <input type="radio" name="home-type" id="" required checked>Casa
       <input type="radio" name="home-type" id="" required>Apartamento
 
     </fieldset>
@@ -53,12 +53,14 @@
       <input type="text" name="role" id="role" maxlength="40">
 
       <label for="role-description">Descrição do cargo</label>
-      <input type="text" name="role-description" id="role-description">
+      <input type="text" name="role-description" id="role-description" maxlength="500">
 
-      <label for="start-date">Descrição do cargo</label>
-      <input type="text" name="start-date" id="start-date">
+      <label for="start-date">Data de início</label>
+      <input type="text" name="start-date" id="start-date" placeholder="20/10/2019">
 
     </fieldset>
+
+    <button type="submit" id="submit">Eviar</button>
 
   </form>
     

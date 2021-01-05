@@ -115,6 +115,25 @@ function createStatesInSelecteTypeList() {
   }
 }
 
+function invalidDate(date) {
+  alert('A data '+ date + ' é inválida');
+}
+
+function checkDate(event) {
+  event.preventDefault();
+  const initialDateJob = document.querySelector('#start-date');
+  const dateArray = initialDateJob.value.split('/');
+  if (dateArray[0] <= 0 || dateArray[0] > 31) invalidDate(initialDateJob.value);
+  else if (dateArray[1] <= 0 || dateArray[1] > 12) invalidDate(initialDateJob.value);
+  else if (dateArray[2] < 0) invalidDate(initialDateJob.value);
+}
+
+function listener() {
+  const buttonSubmit = document.querySelector('#submit');
+  buttonSubmit.addEventListener('click', checkDate);
+}
+
 window.onload = function() {
+  listener();
   createStatesInSelecteTypeList();
 }
