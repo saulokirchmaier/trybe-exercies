@@ -15,7 +15,7 @@
   </header>
   <form action="" method="get" class="m-5">
     
-    <fieldset id="personal-data">
+    <fieldset class="mb-3" id="personal-data">
       <legend>Dados Pessoais</legend>
 
       <div class="form-floating mb-3">
@@ -66,7 +66,7 @@
           </label>
       </div>
 
-      <div class="form-check mb-3">
+      <div class="form-check">
         <input 
           type="radio" 
           name="home-type" 
@@ -85,8 +85,17 @@
     <fieldset id="last-job">
       <legend>Último emprego</legend>
 
-      <label for="resume">Resumo do currículo:</label>
-      <textarea name="resume" id="resume-text" cols="30" rows="5" maxlength="1000"></textarea>
+      <div class="form-floating mb-3">
+        <textarea 
+          class="form-control" 
+          placeholder="Descreva brevemente seu uĺtimo cargo..." 
+          name="resume" id="resume-text" 
+          cols="30" 
+          rows="5" 
+          maxlength="1000"
+        ></textarea>
+        <label for="resume">Resumo do currículo:</label>
+      </div>
 
       <label for="role">Cargo</label>
       <input type="text" name="role" id="role" maxlength="40">
