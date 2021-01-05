@@ -37,8 +37,12 @@
       </select>
 
       <label for="home-type">Moradia:</label>
-      <input type="radio" name="home-type" id="" required checked>Casa
-      <input type="radio" name="home-type" id="" required>Apartamento
+      <label for="house">
+        <input type="radio" name="home-type" id="house" value="Casa" required checked>Casa
+      </label>
+      <label for="apartment">
+        <input type="radio" name="home-type" id="apartment" value="Apartamento" required>Apartamento
+      </label>
 
     </fieldset>
 
@@ -47,7 +51,7 @@
       <legend>Último emprego</legend>
 
       <label for="resume">Resumo do currículo:</label>
-      <textarea name="resume" id="resume" cols="30" rows="5" maxlength="1000"></textarea>
+      <textarea name="resume" id="resume-text" cols="30" rows="5" maxlength="1000"></textarea>
 
       <label for="role">Cargo</label>
       <input type="text" name="role" id="role" maxlength="40">
@@ -61,8 +65,11 @@
     </fieldset>
 
     <button type="submit" id="submit">Eviar</button>
-
   </form>
+
+  <section class="resume">
+    <h2>Currículo</h2>
+  </section>
     
   <script src="script.js"></script>
 </body>
