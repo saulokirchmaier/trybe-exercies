@@ -114,17 +114,20 @@
         <label for="role-description">Descrição do cargo</label>
       </div>
 
-      <label for="start-date">Data de início</label>
-      <input type="text" name="start-date" id="start-date" placeholder="20/10/2019">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="start-date" id="start-date" placeholder="20/10/2019">
+        <label for="start-date">Data de início</label>
+      </div>
 
     </fieldset>
 
-    <button type="submit" id="submit">Enviar</button>
-    <button type="reset">Limpar</button>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-success" id="submit">Enviar</button>
+      <button type="reset" class="btn btn-warning">Limpar</button>
+    </div>
   </form>
 
   <section class="resume">
-    <h2>Currículo</h2>
   </section>
     
   <script src="script.js"></script>
