@@ -144,6 +144,8 @@ function createResume(event) {
   const inputRoleDescription = document.querySelector('#role-description');
   const inputStartDate = document.querySelector('#start-date');
 
+  const title = document.createElement('h2');
+  title.innerText = 'Currículo';
   const name = document.createElement('p');
   name.innerText = 'Name: ' + inputName.value;
   const email = document.createElement('p');
@@ -168,6 +170,7 @@ function createResume(event) {
   const startDate = document.createElement('p');
   startDate.innerText = 'data de início: ' + inputStartDate.value;
 
+  resume.appendChild(title)
   resume.appendChild(name);
   resume.appendChild(email);
   resume.appendChild(cpf);

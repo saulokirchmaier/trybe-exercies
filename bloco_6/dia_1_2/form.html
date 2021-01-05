@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercício 6.1</title>
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta1-dist/css/bootstrap.min.css">
+  <script src="jquery-3.5.1.min.js"></script>
+  <script src="bootstrap-5.0.0-beta1-dist/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,12 +15,13 @@
   </header>
   <form action="" method="get">
     
-    <label for="personal-data"></label>
     <fieldset id="personal-data">
       <legend>Dados Pessoais</legend>
 
-      <label for="name">Nome:</label>
-      <input type="text" id="name" maxlength="40" required>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control"  id="name" placeholder="João da Silva" maxlength="40" required>
+        <label for="name">Nome</label>
+      </div>
 
       <label for="email">Email:</label>
       <input type="email" id="email" maxlength="50" required>
@@ -46,7 +50,6 @@
 
     </fieldset>
 
-    <label for="last-job"></label>
     <fieldset id="last-job">
       <legend>Último emprego</legend>
 
@@ -64,7 +67,8 @@
 
     </fieldset>
 
-    <button type="submit" id="submit">Eviar</button>
+    <button type="submit" id="submit">Enviar</button>
+    <button type="reset">Limpar</button>
   </form>
 
   <section class="resume">
