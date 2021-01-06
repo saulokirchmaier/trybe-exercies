@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 6.1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cadastro de currículo</h1>
+  </header>
+  <form action="" method="get">
+    
+    <label for="personal-data"></label>
+    <fieldset id="personal-data">
+      <legend>Dados Pessoais</legend>
+
+      <label for="name">Nome:</label>
+      <input type="text" id="name" maxlength="40" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" maxlength="50" required>
+
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" maxlength="11" required>
+
+      <label for="adress">Endereço:</label>
+      <input type="text" id="adress" maxlength="40" required>
+
+      <label for="city">Cidade:</label>
+      <input type="text" id="city" maxlength="40" required>
+
+      <label for="states">Estado:</label>
+      <select name="states" id="states" required>
+        <option value=""></option>
+      </select>
+
+      <label for="home-type">Moradia:</label>
+      <label for="house">
+        <input type="radio" name="home-type" id="house" value="Casa" required checked>Casa
+      </label>
+      <label for="apartment">
+        <input type="radio" name="home-type" id="apartment" value="Apartamento" required>Apartamento
+      </label>
+
+    </fieldset>
+
+    <label for="last-job"></label>
+    <fieldset id="last-job">
+      <legend>Último emprego</legend>
+
+      <label for="resume">Resumo do currículo:</label>
+      <textarea name="resume" id="resume-text" cols="30" rows="5" maxlength="1000"></textarea>
+
+      <label for="role">Cargo</label>
+      <input type="text" name="role" id="role" maxlength="40">
+
+      <label for="role-description">Descrição do cargo</label>
+      <input type="text" name="role-description" id="role-description" maxlength="500">
+
+      <label for="start-date">Data de início</label>
+      <input type="text" name="start-date" id="start-date" placeholder="20/10/2019">
+
+    </fieldset>
+
+    <button type="submit" id="submit">Eviar</button>
+  </form>
+
+  <section class="resume">
+    <h2>Currículo</h2>
+  </section>
+    
+  <script src="script.js"></script>
+</body>
+</html>
