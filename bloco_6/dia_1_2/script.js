@@ -115,23 +115,11 @@ function createStatesInSelecteTypeList() {
   }
 }
 
-function invalidDate(date) {
-  alert('A data '+ date + ' é inválida');
-}
-
-function checkDate() {
-  const initialDateJob = document.querySelector('#start-date');
-  const dateArray = initialDateJob.value.split('/');
-  if (dateArray[0] <= 0 || dateArray[0] > 31) invalidDate(initialDateJob.value);
-  else if (dateArray[1] <= 0 || dateArray[1] > 12) invalidDate(initialDateJob.value);
-  else if (dateArray[2] < 0) invalidDate(initialDateJob.value);
-}
-
 function createResume(event) {
   const resume = document.querySelector('.resume');
   resume.innerHTML = '';
   event.preventDefault();
-  checkDate();
+  // checkDate();
   const inputName = document.querySelector('#name');
   const inputEmail = document.querySelector('#email');
   const inputCpf = document.querySelector('#cpf');
@@ -195,6 +183,8 @@ function createResume(event) {
   resume.appendChild(startDate);
 }
 
+var picker = new Pikaday({ field: $('#start-date')[0] });
+
 function listener() {
   const buttonSubmit = document.querySelector('#submit');
   buttonSubmit.addEventListener('click', createResume);
@@ -203,4 +193,5 @@ function listener() {
 window.onload = function() {
   listener();
   createStatesInSelecteTypeList();
+  // daypicker();
 }
