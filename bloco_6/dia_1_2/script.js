@@ -134,6 +134,7 @@ function createResume(event) {
 
   const title = document.createElement('h2');
   title.innerText = 'Currículo';
+  title.classList.add('text-center')
   const name = document.createElement('p');
   name.classList.add('border-bottom');
   name.innerText = 'Name: ' + inputName.value;

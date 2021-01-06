@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 </head>
 <body>
-  <header class="m-5">
+  <header class="text-center m-5">
     <h1>Cadastro de currículo</h1>
   </header>
   <div class="container-sm">
@@ -108,21 +108,23 @@
           <label for="resume">Resumo do currículo</label>
         </div>
   
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="role" id="role" placeholder="Cargo" maxlength="40">
-          <label for="role">Cargo</label>
-        </div>
-  
-        <div class="form-floating mb-3">
-          <input 
-            type="text" 
-            class="form-control" 
-            name="role-description" 
-            id="role-description" 
-            placeholder="Descrição do cargo" 
-            maxlength="500"
-          >
-          <label for="role-description">Descrição do cargo</label>
+        <div class="row">
+          <div class="form-floating col mb-3">
+            <input type="text" class="form-control" name="role" id="role" placeholder="Cargo" maxlength="40">
+            <label for="role">Cargo</label>
+          </div>
+    
+          <div class="form-floating col mb-3">
+            <input 
+              type="text" 
+              class="form-control" 
+              name="role-description" 
+              id="role-description" 
+              placeholder="Descrição do cargo" 
+              maxlength="500"
+            >
+            <label for="role-description">Descrição do cargo</label>
+          </div>
         </div>
   
         <div class="form-floating mb-3">
