@@ -115,23 +115,10 @@ function createStatesInSelecteTypeList() {
   }
 }
 
-function invalidDate(date) {
-  alert('A data '+ date + ' é inválida');
-}
-
-function checkDate() {
-  const initialDateJob = document.querySelector('#start-date');
-  const dateArray = initialDateJob.value.split('/');
-  if (dateArray[0] <= 0 || dateArray[0] > 31) invalidDate(initialDateJob.value);
-  else if (dateArray[1] <= 0 || dateArray[1] > 12) invalidDate(initialDateJob.value);
-  else if (dateArray[2] < 0) invalidDate(initialDateJob.value);
-}
-
 function createResume(event) {
   const resume = document.querySelector('.resume');
   resume.innerHTML = '';
   event.preventDefault();
-  checkDate();
   const inputName = document.querySelector('#name');
   const inputEmail = document.querySelector('#email');
   const inputCpf = document.querySelector('#cpf');
@@ -144,30 +131,46 @@ function createResume(event) {
   const inputRoleDescription = document.querySelector('#role-description');
   const inputStartDate = document.querySelector('#start-date');
 
+  const title = document.createElement('h2');
+  title.innerText = 'Currículo';
+  title.classList.add('text-center')
+  title.classList.add('text-dark')
   const name = document.createElement('p');
+  name.classList.add('border-bottom');
   name.innerText = 'Name: ' + inputName.value;
   const email = document.createElement('p');
+  email.classList.add('border-bottom');
   email.innerText = 'Email: ' + inputEmail.value;
   const cpf = document.createElement('p');
+  cpf.classList.add('border-bottom');
   cpf.innerText = 'CPF: ' + inputCpf.value;
   const adress = document.createElement('p');
+  adress.classList.add('border-bottom');
   adress.innerText = 'Endereço: ' + inputAdress.value;
   const city = document.createElement('p');
+  city.classList.add('border-bottom');
   city.innerText = 'Cidade: ' + inputCity.value;
   const state = document.createElement('p');
+  state.classList.add('border-bottom');
   state.innerText = 'Estado: ' + inputStates.value;
   const homeType = document.createElement('p');
+  homeType.classList.add('border-bottom');
   if (inputHomeType[0].checked) homeType.innerText = 'Moradia: casa';
   else homeType.innerText = 'Moradia: apartamento'
   const resumeText = document.createElement('p');
+  resumeText.classList.add('border-bottom');
   resumeText.innerText = 'Resumo do currículo: ' + inputResumeText.value;
   const role = document.createElement('p');
+  role.classList.add('border-bottom');
   role.innerText = 'Cargo: ' + inputRole.value;
   const roleDescription = document.createElement('p');
+  roleDescription.classList.add('border-bottom');
   roleDescription.innerText = 'Descrição do cargo: ' + inputRoleDescription.value;
   const startDate = document.createElement('p');
+  startDate.classList.add('border-bottom');
   startDate.innerText = 'data de início: ' + inputStartDate.value;
 
+  resume.appendChild(title)
   resume.appendChild(name);
   resume.appendChild(email);
   resume.appendChild(cpf);
@@ -180,6 +183,8 @@ function createResume(event) {
   resume.appendChild(roleDescription);
   resume.appendChild(startDate);
 }
+
+var picker = new Pikaday({ field: $('#start-date')[0] });
 
 function listener() {
   const buttonSubmit = document.querySelector('#submit');
