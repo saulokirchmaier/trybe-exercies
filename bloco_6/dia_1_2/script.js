@@ -147,27 +147,38 @@ function createResume(event) {
   const title = document.createElement('h2');
   title.innerText = 'Currículo';
   const name = document.createElement('p');
+  name.classList.add('border-bottom');
   name.innerText = 'Name: ' + inputName.value;
   const email = document.createElement('p');
+  email.classList.add('border-bottom');
   email.innerText = 'Email: ' + inputEmail.value;
   const cpf = document.createElement('p');
+  cpf.classList.add('border-bottom');
   cpf.innerText = 'CPF: ' + inputCpf.value;
   const adress = document.createElement('p');
+  adress.classList.add('border-bottom');
   adress.innerText = 'Endereço: ' + inputAdress.value;
   const city = document.createElement('p');
+  city.classList.add('border-bottom');
   city.innerText = 'Cidade: ' + inputCity.value;
   const state = document.createElement('p');
+  state.classList.add('border-bottom');
   state.innerText = 'Estado: ' + inputStates.value;
   const homeType = document.createElement('p');
+  homeType.classList.add('border-bottom');
   if (inputHomeType[0].checked) homeType.innerText = 'Moradia: casa';
   else homeType.innerText = 'Moradia: apartamento'
   const resumeText = document.createElement('p');
+  resumeText.classList.add('border-bottom');
   resumeText.innerText = 'Resumo do currículo: ' + inputResumeText.value;
   const role = document.createElement('p');
+  role.classList.add('border-bottom');
   role.innerText = 'Cargo: ' + inputRole.value;
   const roleDescription = document.createElement('p');
+  roleDescription.classList.add('border-bottom');
   roleDescription.innerText = 'Descrição do cargo: ' + inputRoleDescription.value;
   const startDate = document.createElement('p');
+  startDate.classList.add('border-bottom');
   startDate.innerText = 'data de início: ' + inputStartDate.value;
 
   resume.appendChild(title)
