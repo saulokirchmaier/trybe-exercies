@@ -119,7 +119,6 @@ function createResume(event) {
   const resume = document.querySelector('.resume');
   resume.innerHTML = '';
   event.preventDefault();
-  // checkDate();
   const inputName = document.querySelector('#name');
   const inputEmail = document.querySelector('#email');
   const inputCpf = document.querySelector('#cpf');
@@ -135,6 +134,7 @@ function createResume(event) {
   const title = document.createElement('h2');
   title.innerText = 'Currículo';
   title.classList.add('text-center')
+  title.classList.add('text-dark')
   const name = document.createElement('p');
   name.classList.add('border-bottom');
   name.innerText = 'Name: ' + inputName.value;
@@ -194,5 +194,4 @@ function listener() {
 window.onload = function() {
   listener();
   createStatesInSelecteTypeList();
-  // daypicker();
 }
