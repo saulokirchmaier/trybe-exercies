@@ -21,6 +21,12 @@
   width: 150px;
 }
 
+.initial-text {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
 .social-img {
   width: 25px;
   margin-left: 10px;
