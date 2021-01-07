@@ -185,14 +185,9 @@ function createResume(event) {
   resume.appendChild(startDate);
 }
 
-var picker = new Pikaday({ field: $('#start-date')[0] });
-
-function listener() {
-  const buttonSubmit = document.querySelector('#submit');
-  buttonSubmit.addEventListener('click', createResume);
-}
-
 window.onload = function() {
+  var picker = new Pikaday({ field: $('#start-date')[0] });
+  
   // Example starter JavaScript for disabling form submissions if there are invalid fields
   (() => {
     'use strict';
@@ -216,6 +211,5 @@ window.onload = function() {
     });
   })();
 
-  // listener();
   createStatesInSelecteTypeList();
 }
