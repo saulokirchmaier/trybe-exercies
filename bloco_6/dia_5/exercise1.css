@@ -1,6 +1,5 @@
 body {
   font-size: 32px;
-  margin: 16px;
 }
 
 h1 {
@@ -8,7 +7,11 @@ h1 {
 }
 
 h2 {
+  font-size: 1.7rem;
+}
 
+p {
+  font-size: 1.2rem;
 }
 
 img {
@@ -21,19 +24,59 @@ figure {
   justify-content: space-between;
 }
 
+.content {
+  margin: 0 auto;
+  width: 90%;
+}
+
 @media screen and (min-width: 480px) {
   body {
     background-color: lightgray;
     font-size: 1.5rem;
-    margin: 16px 32px;
+    margin: 16px 28px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  p {
+    font-size: 1.5rem;
   }
 
   .img-container {
     display: flex;
     flex-wrap: wrap;
+    flex-basis: 200px;
   }
 
   figure {
     width: 50%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  body {
+    background-color: #161a1d;
+    color: whitesmoke;
+    font-size: 2rem;
+    margin: 16px auto;
+    max-width: 1200px;
+  }
+
+  h1 {
+    font-size: 2.7rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  p {
+    font-size: 1.7rem;
   }
 }
