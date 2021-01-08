@@ -1,5 +1,6 @@
 body {
   font-size: 24px;
+  margin: 16px;
 }
 
 h1 {
@@ -11,6 +12,7 @@ h2 {
 }
 
 img {
+  margin: 16px auto 0;
   max-width: 100%;
 }
 
