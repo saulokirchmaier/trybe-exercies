@@ -69,7 +69,7 @@ Vamos criar um formulário de cadastro de currículo com base na especificação
 
 O Exercicício acima foi feito com o framework CSS [Bootstrap](https://getbootstrap.com/) e [Pickaday](https://github.com/Pikaday/Pikaday), e as validações atravez do html do Bootstrap.
 
-[Resultado final](https://getbootstrap.com/).
+Clique [aqui](https://saulokirchmaier.github.io/forms_bootstrap/) para testar o resultado final.
 
 ![Imagem](img_forms.png)
 
