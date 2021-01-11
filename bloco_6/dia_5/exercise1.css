@@ -29,6 +29,13 @@ figure {
   width: 90%;
 }
 
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 200px;
+  justify-content: space-between;
+}
+
 @media screen and (min-width: 480px) {
   body {
     background-color: lightgray;
@@ -46,12 +53,6 @@ figure {
   
   p {
     font-size: 1.5rem;
-  }
-
-  .img-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: 200px;
   }
 
   figure {
