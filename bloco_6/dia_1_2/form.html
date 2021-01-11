@@ -42,13 +42,13 @@
           </div>
         </div>
   
-        <div class="form-floating col mb-3">
-          <input type="text" class="form-control" id="adress" placeholder="Av. Itaim, 100" maxlength="40" required>
-          <label for="adress">Endereço</label>
-          <div class="invalid-feedback">Favor inserir seu endereço atual.</div>
-        </div>
-  
-        <div class="d-flex flex-sm-row flex-wrap justify-content-around">
+        
+        <div class="d-flex flex-sm-row flex-wrap gap-2 justify-content-evenly">
+          <div class="form-floating flex-fill mb-3">
+            <input type="text" class="form-control" id="adress" placeholder="Av. Itaim, 100" maxlength="40" required>
+            <label for="adress">Endereço</label>
+            <div class="invalid-feedback">Favor inserir seu endereço atual.</div>
+          </div>
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="city" placeholder="Goiania" maxlength="40" required>
             <label for="city">Cidade</label>
@@ -117,14 +117,20 @@
           <div class="invalid-feedback">Favor inserir um resumo profissional.</div>
         </div>
   
-        <div class="d-flex flex-sm-row flex-wrap justify-content-evenly align-items-center">
+        <div class="d-flex flex-sm-row flex-wrap gap-2 justify-content-evenly">
           <div class="form-floating mb-3">
             <input type="text" class="form-control" name="role" id="role" placeholder="Cargo" maxlength="40" required>
             <label for="role">Cargo</label>
           <div class="invalid-feedback">Favor inserir seu cargo.</div>
           </div>
-    
+          
           <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="start-date" id="start-date" placeholder="20/10/2019" required>
+            <label for="start-date">Data de início</label>
+          <div class="invalid-feedback">Favor selecione a data de início.</div>
+          </div>
+    
+          <div class="form-floating flex-fill mb-3">
             <input 
               type="text" 
               class="form-control" 
@@ -136,11 +142,6 @@
             >
             <label for="role-description">Descrição do cargo</label>
           <div class="invalid-feedback">Favor inserir uma descrição do cargo.</div>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="start-date" id="start-date" placeholder="20/10/2019" required>
-            <label for="start-date">Data de início</label>
-          <div class="invalid-feedback">Favor selecione a data de início.</div>
           </div>
         </div>
   
