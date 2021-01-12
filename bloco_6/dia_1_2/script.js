@@ -117,8 +117,8 @@ function createStatesInSelecteTypeList() {
 
 function createResume(event) {
   const resume = document.querySelector('.resume');
+  resume.classList.add('border-top');
   resume.innerHTML = '';
-  event.preventDefault();
   const inputName = document.querySelector('#name');
   const inputEmail = document.querySelector('#email');
   const inputCpf = document.querySelector('#cpf');
@@ -133,8 +133,9 @@ function createResume(event) {
 
   const title = document.createElement('h2');
   title.innerText = 'Currículo';
-  title.classList.add('text-center')
-  title.classList.add('text-dark')
+  title.classList.add('text-center');
+  title.classList.add('text-dark');
+  title.classList.add('mt-3');
   const name = document.createElement('p');
   name.classList.add('border-bottom');
   name.innerText = 'Name: ' + inputName.value;
@@ -184,14 +185,31 @@ function createResume(event) {
   resume.appendChild(startDate);
 }
 
-var picker = new Pikaday({ field: $('#start-date')[0] });
-
-function listener() {
-  const buttonSubmit = document.querySelector('#submit');
-  buttonSubmit.addEventListener('click', createResume);
-}
-
 window.onload = function() {
-  listener();
+  var picker = new Pikaday({ field: $('#start-date')[0] });
+  
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (() => {
+    'use strict';
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation');
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach((form) => {
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          event.preventDefault();
+          event.stopPropagation();
+          createResume();
+        } 
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+
   createStatesInSelecteTypeList();
 }
