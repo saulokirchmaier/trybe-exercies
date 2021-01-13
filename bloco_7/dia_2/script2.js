@@ -31,8 +31,18 @@ const objectVelues = (object) => Object.values(object);
 
 const allLessons = {lesson1, lesson2, lesson3};
 
+const numberOfStudents = (object) => {
+  const lessons = Object.keys(object);
+  let totalStudants = 0;
+  for (iten of lessons) {
+    totalStudants += object[iten].numeroEstudantes;
+  }
+  return totalStudants;
+}
+
 console.log(changeShift(lesson2,'turno','manhã'));
 console.log(allKeys(lesson1));
 console.log(objectLenght(lesson1));
 console.log(objectVelues(lesson2));
 console.log(allLessons);
+console.log(numberOfStudents(allLessons));
