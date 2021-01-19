@@ -6,7 +6,6 @@ Estes exercícios praticam os conceitos de Higher Order Functions associados a o
 
 A partir do seguinte código: 
 
-    ```javascript
     const assert = require('assert');
 
     const books = [
