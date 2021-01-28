@@ -1,3 +1,9 @@
+const divisionArray = (number) => {
+  const newArray = [2, 3, 5, 10];
+  
+  return newArray.map(item => Math.ceil(number / item));
+}
+
 const fetchPromise = () => {
   const myPromise = new Promise((resolve, reject) => {
     const randonNumbers = [];
@@ -7,10 +13,12 @@ const fetchPromise = () => {
 
     const total = randonNumbers.reduce((acc, curr) => acc += curr);
 
-    (total <= 8000) ? resolve() : reject();
+    (total <= 8000) ? resolve(total) : reject(total);
   });
 
-  myPromise.then(() => console.log('Passou')).catch(() => console.log('Não passou'));
+  myPromise
+    .then((total) => console.log(divisionArray(total), total))
+    .catch((total) => console.log('Não passou', total));
 };
 
 fetchPromise();
