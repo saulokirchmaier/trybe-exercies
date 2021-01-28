@@ -12,13 +12,13 @@ const fetchPromise = () => {
     }
 
     const total = randonNumbers.reduce((acc, curr) => acc += curr);
-
     (total <= 8000) ? resolve(total) : reject(total);
   });
 
   myPromise
-    .then((total) => console.log(divisionArray(total), total))
-    .catch((total) => console.log('Não passou', total));
+    .then((total) => divisionArray(total))
+    .then((array) => console.log(array.reduce((acc, curr) => acc += curr)))
+    .catch(() => console.log('É mais de oito miiil!!! Essa promise deve estar quebrada!'));
 };
 
 fetchPromise();
