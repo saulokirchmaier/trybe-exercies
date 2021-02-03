@@ -13,4 +13,7 @@ describe('Testes parte 1 dia 1 bloco 10', () => {
     expect(() => sum(4, '5')).toThrow();
   });
 
+  it('Check if 4 + "5" return error', () => {
+    expect(() => sum(4, '5')).toThrow(new Error('parameters must be numbers'));
+  });
 });
