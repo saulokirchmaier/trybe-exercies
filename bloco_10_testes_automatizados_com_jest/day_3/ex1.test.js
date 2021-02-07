@@ -1,4 +1,4 @@
-const ex1 = require('./ex1.js');
+let ex1 = require('./ex1.js');
 
 describe('Teste função randomNumber', () => {
   it('Testado a chamada da função', () => {
@@ -51,4 +51,40 @@ describe('Ex. 3', () => {
 
     spyRandomNumber.mockRestore();
   });
+});
+
+describe('Ex. 4 - novas funções', () => {
+  it('Teste função toUpperCase mockando para lower case', () => {
+    let spyToUpperCase = jest
+      .spyOn(ex1, 'toUpperCase')
+      .mockImplementation(string => string.toLowerCase());
+
+    expect(spyToUpperCase('SAULO')).toBe('saulo');
+    expect(spyToUpperCase).toBeCalled();
+    expect(spyToUpperCase).toBeCalledTimes(1);
+    expect(spyToUpperCase).toBeCalledWith('SAULO');
+  });
+
+  it('Teste função fristLetter mockando para retornar ultima letra', () => {
+    let spyFristLetter = jest
+      .spyOn(ex1, 'fristLetter')
+      .mockImplementation(string => string[string.length - 1]);
+
+    expect(spyFristLetter('SAULO')).toBe('O');
+    expect(spyFristLetter).toBeCalled();
+    expect(spyFristLetter).toBeCalledTimes(1);
+    expect(spyFristLetter).toBeCalledWith('SAULO');
+  });
+
+  it('Teste função concatStrings mockando para contenar 3 strings', () => {
+    let spyConcatStrings = jest
+      .spyOn(ex1, 'concatStrings')
+      .mockImplementation((str1, str2, str3) => `${str1}${str2}${str3}`);
+
+    expect(spyConcatStrings('SA','U','LO')).toBe('SAULO');
+    expect(spyConcatStrings).toBeCalled();
+    expect(spyConcatStrings).toBeCalledTimes(1);
+    expect(spyConcatStrings).toBeCalledWith('SA','U','LO');
+  });
+
 });
