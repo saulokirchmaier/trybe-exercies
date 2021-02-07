@@ -1,4 +1,4 @@
-let ex1 = require('./ex1.js');
+const ex1 = require('./ex1.js');
 
 describe('Teste função randomNumber', () => {
   it('Testado a chamada da função', () => {
@@ -53,7 +53,7 @@ describe('Ex. 3', () => {
   });
 });
 
-describe('Ex. 4 - novas funções', () => {
+describe('Ex. 4/5 - novas funções e testes', () => {
   it('Teste função toUpperCase mockando para lower case', () => {
     let spyToUpperCase = jest
       .spyOn(ex1, 'toUpperCase')
@@ -63,6 +63,7 @@ describe('Ex. 4 - novas funções', () => {
     expect(spyToUpperCase).toBeCalled();
     expect(spyToUpperCase).toBeCalledTimes(1);
     expect(spyToUpperCase).toBeCalledWith('SAULO');
+    spyToUpperCase.mockClear();
   });
 
   it('Teste função fristLetter mockando para retornar ultima letra', () => {
@@ -86,5 +87,21 @@ describe('Ex. 4 - novas funções', () => {
     expect(spyConcatStrings).toBeCalledTimes(1);
     expect(spyConcatStrings).toBeCalledWith('SA','U','LO');
   });
+});
 
+describe('Ex. 5 mockando e restaurano a afunção toUpperCase', () => {
+  it('Teste função toUpperCase mockando para lower case e restaurando', () => {
+    let spyToUpperCase = jest
+      .spyOn(ex1, 'toUpperCase')
+      .mockImplementation(string => string.toLowerCase());
+
+    expect(spyToUpperCase('SAULO')).toBe('saulo');
+    expect(spyToUpperCase).toBeCalled();
+    expect(spyToUpperCase).toBeCalledTimes(1);
+    expect(spyToUpperCase).toBeCalledWith('SAULO');
+
+    ex1.toUpperCase.mockRestore();
+
+    expect(ex1.toUpperCase('saulo')).toBe('SAULO');
+  });
 });
