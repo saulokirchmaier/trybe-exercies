@@ -11,7 +11,7 @@ const task = (value) => {
 
 function App() {
   return (
-    <ul>{lista.map(list => <li>{ list }</li>)}</ul>
+    <ul>{lista.map(list => task(list))}</ul>
   );
 }
 
