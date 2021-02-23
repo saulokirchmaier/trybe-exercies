@@ -45,13 +45,16 @@ class Pokedex extends React.Component {
         <div className="pokedex">
           <Pokemon pokemon={data[this.state.currentPokemon]} key={data.id}/>
         </div>
-        <Button handleClick={() => this.handleNextButton(data.length)}>Next</Button>
+        <Button handleClick={() => this.handleNextButton(data.length)}>Proximo</Button>
         <div>
-          <Button handleClick={() => this.handlePokeFilter('All')}>All</Button>
+          {pokeTypes.map(type => <Button 
+            handleClick={() => this.
+              handlePokeFilter(type)} key={type}>{type}</Button>)}
+          {/* <Button handleClick={() => this.handlePokeFilter('All')}>All</Button>
           <Button handleClick={() => this.handlePokeFilter('Fire')}>Fire</Button>
-          <Button handleClick={() => this.handlePokeFilter('Psychic')}>Psychic</Button>
+          <Button handleClick={() => this.handlePokeFilter('Psychic')}>Psychic</Button> */}
         </div>
-        <PokeTypesButtons pokeTypes={pokeTypes}/>
+        {/* <PokeTypesButtons pokeTypes={pokeTypes}/> */}
       </div>
     );
   }
