@@ -1,8 +1,13 @@
 import React from 'react';
+import './Button.css';
 
-function Button({handleClick, children}) {
+function Button({handleClick, children, disabled}) {
   return(
-    <button onClick={handleClick}>{children}</button>
+    <button 
+      onClick={handleClick} 
+      className="Button"
+      disabled={ disabled }
+    >{children}</button>
   );
 }
 

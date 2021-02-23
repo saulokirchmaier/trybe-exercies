@@ -8,10 +8,9 @@
   gap: 5px;
   justify-content: space-evenly;
   padding: 5px 10px;
-  background-color: lightcoral;
+  background-color: #f08080;
 }
 
 .name {
   font-weight: 700;
 }
-

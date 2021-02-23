@@ -1,9 +1,8 @@
-import React, { Children } from 'react';
+import React from 'react';
 import './Pokedex.css';
 import Pokemon from './Pokemon';
 // import PokeTypes from './PokeTypes';
 import Button from './Button';
-import PokeTypesButtons from './PokeTypesButtons';
 
 class Pokedex extends React.Component {
 
@@ -39,22 +38,26 @@ class Pokedex extends React.Component {
       .reduce((unic, item) => unic
         .includes(item.type) ? unic : [...unic, item.type], []);
     pokeTypes.push('All');
+    
     return (
       <div>
         <h1>Pokedex</h1>
         <div className="pokedex">
           <Pokemon pokemon={data[this.state.currentPokemon]} key={data.id}/>
         </div>
-        <Button handleClick={() => this.handleNextButton(data.length)}>Proximo</Button>
-        <div>
+        <Button 
+          handleClick={() => this.handleNextButton(data.length)}
+          className="next-pokemon"
+          disabled={data.length <= 1}
+        >Proximo</Button>
+        <div className="poke-types">
           {pokeTypes.map(type => <Button 
-            handleClick={() => this.
-              handlePokeFilter(type)} key={type}>{type}</Button>)}
-          {/* <Button handleClick={() => this.handlePokeFilter('All')}>All</Button>
-          <Button handleClick={() => this.handlePokeFilter('Fire')}>Fire</Button>
-          <Button handleClick={() => this.handlePokeFilter('Psychic')}>Psychic</Button> */}
+              handleClick={() => this.handlePokeFilter(type)} 
+              key={type}
+              className="poke-types-button"
+            >{type}</Button>)
+          }
         </div>
-        {/* <PokeTypesButtons pokeTypes={pokeTypes}/> */}
       </div>
     );
   }
