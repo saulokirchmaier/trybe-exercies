@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import FormErrors from './FormErrors';
+import brazilStates from './brazilStates';
 
 class Form extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class Form extends Component {
       CPF: '',
       address: '',
       city: '',
+      state: '',
       formErrors: {
         name: '',
         email: '',
@@ -25,6 +27,7 @@ class Form extends Component {
   }
 
   handleChange(event) {
+    // console.log(event.target.name);
     let { name, value } = event.target;
     if (name === 'name') value = value.toUpperCase();
     if (name === 'address') value = value.replace(/[^A-Za-z0-9]+/g, "")
@@ -43,8 +46,6 @@ class Form extends Component {
           .match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) ? '' : ' is invalid';
       case 'CPF':
         return value.match(/-?\d*\.?\d+/g) ? '' : ' is invalid';
-      // case 'address':
-      //   return value.replace(/\\W/, "")
       default:
         break;
     }
@@ -119,6 +120,17 @@ class Form extends Component {
                 value={this.state.city}
                 required
               ></input>
+            </label>
+
+            <label>
+              Selecione seu estado:
+              <select name="state" value={this.state.value} onChange={this.handleChange}>
+                {brazilStates.map(state => <option 
+                    value={state.state}
+                    key={state.initials}
+                  >{state.initials.toUpperCase()}</option>)
+                }
+              </select>
             </label>
 
           </fieldset>
