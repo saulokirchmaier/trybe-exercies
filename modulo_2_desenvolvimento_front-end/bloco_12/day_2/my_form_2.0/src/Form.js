@@ -8,7 +8,9 @@ class Form extends Component {
 
     this.state = {
       name: '',
-      email: ''
+      email: '',
+      CPF: '',
+      address: ''
     };
   }
 
@@ -29,6 +31,7 @@ class Form extends Component {
             type="text"
             name="name"
             maxLength="40"
+            required
           ></input>
 
           <input
@@ -36,6 +39,23 @@ class Form extends Component {
             type="text"
             name="email"
             maxLength="50"
+            required
+          ></input>
+
+          <input
+            onChange={this.handleChange}
+            type="text"
+            name="CPF"
+            maxLength="11"
+            required
+          ></input>
+
+          <input
+            onChange={this.handleChange}
+            type="text"
+            name="address"
+            maxLength="200"
+            required
           ></input>
         </fieldset>
       </form>
