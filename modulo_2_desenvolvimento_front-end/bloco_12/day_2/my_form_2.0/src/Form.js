@@ -16,6 +16,7 @@ class Form extends Component {
       address: '',
       city: '',
       state: '',
+      home: '',
       formErrors: {
         name: '',
         email: '',
@@ -133,6 +134,17 @@ class Form extends Component {
               </select>
             </label>
 
+            <label>
+              Moradia:
+              <div onChange={this.handleChange}>
+                <label>
+                  <input type="radio" name="home" value="Casa" checked />Casa
+                </label>
+                <label>
+                  <input type="radio" name="home" value="Apartamento" />Apartamento
+                </label>
+              </div>
+            </label>
           </fieldset>
         </form>
         <div>
