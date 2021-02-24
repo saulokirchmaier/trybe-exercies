@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import Input from './Input';
 
 class Form extends Component {
   constructor() {
@@ -14,26 +13,29 @@ class Form extends Component {
   }
 
   handleChange(event) {
-    console.log(event.target);
+    let { name, value } = event.target;
+    if (name === 'name') value = value.toUpperCase();
+    this.setState({
+      [name]: value,
+    })
   }
 
   render() {
     return(
       <form>
         <fieldset>
-          {/* <Input
-            onChange={() => this.handleChange()}
-            type="text"
-            name="name"
-            maxLength="40"
-            // uppercase={true}
-          /> */}
-          <Input type="text" name="email" maxLength="50"/>
           <input
             onChange={this.handleChange}
             type="text"
             name="name"
             maxLength="40"
+          ></input>
+
+          <input
+            onChange={this.handleChange}
+            type="text"
+            name="email"
+            maxLength="50"
           ></input>
         </fieldset>
       </form>
