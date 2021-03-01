@@ -1,0 +1,8 @@
+.Form {
+  display: flex;
+}
+
+.personal {
+  display: flex;
+  flex-wrap: wrap;
+}
