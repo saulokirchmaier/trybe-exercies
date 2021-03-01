@@ -63,8 +63,8 @@ class Form extends Component {
   render() {
     return(
       <>
-        <form>
-          <fieldset>
+        <form className='Form'>
+          <fieldset className="personal">
             <label>
               Nome:
               <input
