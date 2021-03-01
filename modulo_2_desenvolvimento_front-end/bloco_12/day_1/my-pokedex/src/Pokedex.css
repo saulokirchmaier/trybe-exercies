@@ -1,0 +1,34 @@
+.pokedex {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 70%;
+	flex-flow: row wrap;
+	gap: 10px;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 70%;
+}
+
+h1 {
+	margin: 0;
+	padding: 20px;
+}
+
+.next-pokemon {
+	width: 500px;
+  background-color: #7FF09F;
+}
+
+.poke-types {
+  background-color:red;
+	display: block;
+	flex-wrap: wrap;
+	flex-basis: 50px;
+	margin: 0 auto;
+	max-width: 50vw;
+}
+
+.poke-types-button {
+  background-color:red;
+}
