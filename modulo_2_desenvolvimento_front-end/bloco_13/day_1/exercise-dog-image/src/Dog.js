@@ -7,11 +7,8 @@ class Dog extends React.Component {
     this.state = {
       loading: true,
       dogImage: '',
-      allDogs: [],
     };
 
-    this.fetchDog = this.fetchDog.bind(this);
-    this.renderDogImage = this.renderDogImage.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -19,25 +16,30 @@ class Dog extends React.Component {
     this.fetchDog();
   }
 
-  async fetchDog() {
-    this.setState(
-      { loading: true },
-      async () => {
-        const requestDog = await fetch('https://dog.ceo/api/breeds/image/random');
-        const dogJSON = await requestDog.json();
-        this.setState({
-          loading: false,
-          dogImage: dogJSON.message,
-        })
-      }
-    )
+  shouldComponentUpdate(_nextProps, nextState) {
+    const { dogImage } = nextState;
+    // if (dogImage.includes('terrier')) return false;
+    return !(dogImage.includes('terrier'));
   }
 
-  renderDogImage() {
+  saveToLocalStorage() {
     const { dogImage } = this.state;
-    return(
-      <img src={dogImage} alt="Dog"></img>
-    );
+    localStorage.setItem('dogURL', dogImage);
+  }
+
+  async fetchDog() {
+    this.setState(
+      { loading: true}, 
+      async () => {
+      const requestDog = await fetch('https://dog.ceo/api/breeds/image/random');
+      const dogJSON = await requestDog.json();
+      const dogImage = dogJSON.message;
+      this.setState({
+        dogImage,
+        loading: false,
+      })
+    });
+    this.saveToLocalStorage();
   }
 
   handleClick() {
@@ -45,11 +47,12 @@ class Dog extends React.Component {
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading, dogImage } = this.state;
     const loadingElement = <span>Loading...</span>;
+    const image = <img src={ dogImage } alt="Dog" className="dog-image"></img>;
     return(
       <>
-        <p>{loading ? loadingElement : this.renderDogImage()}</p>
+        <p>{loading ? loadingElement : image }</p>
         <button onClick={this.handleClick}>Novo cachorro</button>
       </>
     );

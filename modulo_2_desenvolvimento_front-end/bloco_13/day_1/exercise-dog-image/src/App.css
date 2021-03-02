@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.Dog {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dog-image {
+  max-width: 200px;
+}
