@@ -17,14 +17,17 @@ class Dog extends React.Component {
   }
 
   shouldComponentUpdate(_nextProps, nextState) {
+    console.log('should update');
     const { dogImage } = nextState;
-    // if (dogImage.includes('terrier')) return false;
     return !(dogImage.includes('terrier'));
   }
 
-  saveToLocalStorage() {
+  componentDidUpdate() {
+    console.log('did update');
     const { dogImage } = this.state;
+    const dogBreed = dogImage.split("/")[4];
     localStorage.setItem('dogURL', dogImage);
+    alert(dogBreed);
   }
 
   async fetchDog() {
@@ -39,7 +42,6 @@ class Dog extends React.Component {
         loading: false,
       })
     });
-    this.saveToLocalStorage();
   }
 
   handleClick() {
